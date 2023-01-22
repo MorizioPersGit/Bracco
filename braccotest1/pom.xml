@@ -39,7 +39,7 @@
 						<muleVersion>${app.runtime}</muleVersion>
 						<username>s_morizio</username>
 						<password>TechMuleLab70!</password>
-						<environment>SANDBOX</environment>
+						<environment>Sandbox</environment>
 						<applicationName>braccotest1</applicationName>
 						<businessGroup>Techedge Group</businessGroup>
 						<objectStoreV2>true</objectStoreV2>
