@@ -36,14 +36,12 @@
 
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
-						<muleVersion>${mule.version}</muleVersion>
+						<muleVersion>${app.runtime}</muleVersion>
 						<username>s_morizio</username>
 						<password>TechMuleLab70!</password>
 						<environment>SANDBOX</environment>
-						<applicationName>${project.artifactId}</applicationName>
+						<applicationName>braccotest1</applicationName>
 						<businessGroup>Techedge Group</businessGroup>
-						<workerType>${vCore}</workerType>
-						<workers>${workers}</workers>
 						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
 				</configuration>
