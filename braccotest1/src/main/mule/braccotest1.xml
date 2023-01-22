@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="5b144a53-ec70-4551-b358-0783c8281a82" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="braccotest1Flow" doc:id="34e91026-d968-44c1-918b-2edda8262e90" >
+		<http:listener doc:id="bdfd221b-3a45-45a2-b1a5-ca399ca6daf8" doc:name="Bracco test" config-ref="HTTP_Listener_config" path="/bracco1"/>
+		<logger level="INFO" doc:name="Logger" doc:id="7d00eee0-29d2-407f-94de-f99727c089b7" />
+		<ee:transform doc:name="Transform Message" doc:id="7aa7a8b1-e99f-4b2b-a29c-12d09183cd95" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/java
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
